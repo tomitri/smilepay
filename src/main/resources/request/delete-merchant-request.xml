@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:art="http://www.smile.com/merchant-ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <art:deleteMerchantRequest>
+		<art:idMerchant>2</art:idMerchant>
+      </art:deleteMerchantRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

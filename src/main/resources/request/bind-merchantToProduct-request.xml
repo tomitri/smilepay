@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:art="http://www.smile.com/bindingMerchantToProduct-ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <art:bindRequest> 
+		 <art:idMerchant>1</art:idMerchant>
+		 <art:idProduct>3</art:idProduct>
+      </art:bindRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

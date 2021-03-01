@@ -1,0 +1,12 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:art="http://www.smile.com/product-ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <art:updateProductRequest> 
+		<art:productInfo>
+			<art:idProduct>3</art:idProduct>
+	        <art:label>Tuto</art:label>
+	        <art:currency>Dollar</art:currency>
+	    </art:productInfo>
+      </art:updateProductRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

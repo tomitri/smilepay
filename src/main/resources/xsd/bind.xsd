@@ -1,0 +1,54 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.smile.com/bindingMerchantToProduct-ws"
+	targetNamespace="http://www.smile.com/bindingMerchantToProduct-ws"
+	elementFormDefault="qualified">
+
+	<xs:complexType name="merchantInfo">
+		<xs:sequence>
+			<xs:element name="idMerchant" type="xs:long" />
+			<xs:element name="nameMerchant" type="xs:string" />
+			<xs:element name="lastnameMerchant" type="xs:string" />
+			<xs:element name="birthMerchant" type="xs:date" />
+			<xs:element name="createDateMerchant" type="xs:dateTime" />
+			<xs:element name="products">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="productsInfo" type="tns:productInfo" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="serviceStatus">
+		<xs:sequence>
+			<xs:element name="statusCode" type="xs:string" />
+			<xs:element name="message" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="bindRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="idMerchant" type="xs:long" />
+				<xs:element name="idProduct" type="xs:long" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="bindResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="serviceStatus" type="tns:serviceStatus" />
+				<xs:element name="merchantInfo" type="tns:merchantInfo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	    <xs:complexType name="productInfo">
+        <xs:sequence>
+            <xs:element name="idProduct" type="xs:long"/>
+            <xs:element name="label" type="xs:string"/>
+            <xs:element name="currency" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

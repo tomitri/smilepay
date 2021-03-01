@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:art="http://www.smile.com/product-ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <art:deleteProductRequest>
+		<art:idProduct>2</art:idProduct>
+      </art:deleteProductRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

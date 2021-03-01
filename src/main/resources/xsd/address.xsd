@@ -1,0 +1,64 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.smile.com/address-ws"
+           targetNamespace="http://www.smile.com/address-ws" elementFormDefault="qualified">
+    
+    <xs:complexType name="addressInfo">
+        <xs:sequence>
+            <xs:element name="idAddress" type="xs:long"/>
+            <xs:element name="numéro" type="xs:int"/>
+            <xs:element name="street" type="xs:string"/>
+            <xs:element name="zipcode" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+           
+    <xs:complexType name="serviceStatus">
+        <xs:sequence>
+            <xs:element name="statusCode" type="xs:string"/>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="addAddressRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="addressInfo" type="tns:addressInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="addAddressResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>            
+                <xs:element name="addressInfo" type="tns:addressInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateAddressRequest">
+        <xs:complexType>
+            <xs:sequence>
+               <xs:element name="addressInfo" type="tns:addressInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateAddressResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteAddressRequest">
+        <xs:complexType>
+            <xs:sequence>
+               <xs:element name="idAddress" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteAddressResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element> 
+          
+</xs:schema>
